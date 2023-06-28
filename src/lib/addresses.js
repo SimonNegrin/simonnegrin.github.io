@@ -71,12 +71,16 @@ export default [
         placeName: 'Museum',
       },
       {
-        time: ['19:00', '21:00'],
+        time: ['21:00', '23:00'],
         placeName: 'Watch a movie',
       },
       {
         time: ['08:00', '08:30'],
         placeName: 'Breakfast',
+      },
+      {
+        time: ['14:30', '15:00'],
+        placeName: 'Practice guitar',
       }
     ]
   }

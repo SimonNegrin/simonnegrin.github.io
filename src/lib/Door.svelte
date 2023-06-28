@@ -6,9 +6,10 @@
 
   const dispatch = createEventDispatcher()
 
-  function onPasswordChange({ target }) {
-    const { password } = address
-    if (password && target.value.toLowerCase() === password.toLowerCase()) {
+  let password = ''
+
+  function onSubmit() {
+    if (address.password && address.password.toLowerCase() === password.toLowerCase()) {
       dispatch('open')
     }
   }
@@ -22,12 +23,14 @@
   <div class="down">
     <div class="door">
       <div class="handle"></div>
-      <input
-        type="text"
-        class="password"
-        placeholder="Password"
-        on:input={onPasswordChange}
-        >
+      <form on:submit|preventDefault={onSubmit}>
+        <input
+          type="text"
+          class="password"
+          placeholder="Password"
+          bind:value={password}
+          >
+      </form>
     </div>
   </div>
 </div>
